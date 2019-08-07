@@ -11,4 +11,5 @@
     `rails db:migrate`
 
 4. Add S3 storage credentials
-    
+
+5. Add Post model
