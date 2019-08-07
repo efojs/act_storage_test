@@ -4,7 +4,7 @@
   <% @posts.each do |p| %>
     <div>
       <%= image_tag p.image %><br>
-      <%= link_to "Delete post...", destroy_post_path(id: p.id), method: :delete, remote: true, data: { confirm: "Delete post?" }  %>
+      <%= link_to "Delete post...", destroy_post_path(id: p.id), method: :delete, remote: true %>
     </div>
   <% end %>
 <% end %>
