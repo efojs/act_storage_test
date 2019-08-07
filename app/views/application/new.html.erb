@@ -1,0 +1,8 @@
+<h1>New</h1>
+
+<div>
+	<%= form_with scope: :post, url: create_post_path, local: true do |form| %>
+    <%= form.file_field :image, direct_upload: true %>
+    <%= form.submit :save %>
+	<% end %>
+</div>

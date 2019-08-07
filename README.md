@@ -13,3 +13,5 @@
 4. Add S3 storage credentials
 
 5. Add Post model
+
+6. Add actions and routes
