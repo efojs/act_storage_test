@@ -1,5 +1,6 @@
 ## Plot
-After deletion of post with image, Turbolinks try to GET deleted blob
+After deletion of post with image, Turbolinks try to GET deleted blob  
+Issue #36887: https://github.com/rails/rails/issues/36887
 
 ## System
 * Ruby 2.5.5
@@ -25,6 +26,13 @@ After deletion of post with image, Turbolinks try to GET deleted blob
     No error
 
 #### Actual
+Chrome console:
+```
+GET http://localhost:3000/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e2ad5b6b6dce1925d3aa9dac8ef472414b1c7396/8adtfjh3noe01.jpg
+404 (Not Found)
+```
+
+Logs:
 
 ```
 Started GET "/rails/active_storage/blobs/eyJf <...>
@@ -48,12 +56,12 @@ puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 
 2. Pin Rails gem to master@d44fdd2 (latest at the moment)
 
-3. Install Active Storage and add AWS S3 SDK
-    `rails active_storage:install`
-    `gem "aws-sdk-s3", require: false`
-    `bundle install`
-    `rails db:create`
-    `rails db:migrate`
+3. Install Active Storage and add AWS S3 SDK  
+    `rails active_storage:install`  
+    `gem "aws-sdk-s3", require: false`  
+    `bundle install`  
+    `rails db:create`  
+    `rails db:migrate`  
 
 4. Add S3 storage credentials
 
